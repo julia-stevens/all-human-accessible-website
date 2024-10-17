@@ -90,11 +90,27 @@
     list-style-type: none;
 }
 
+/* Bron: https://www.geeksforgeeks.org/how-to-add-skip-navigation-links-for-better-web-accessibility-in-html/ */
+.skip-link {
+    color: black; 
+    padding: 1rem;
+    background-color: lime;
+    position: absolute; 
+    z-index: 2; 
+    top: auto; 
+    left: -10000px;
+}
+
+.skip-link:focus {
+    left: 0; 
+}
+
 body {
     font-size: 16px;
     font-family: 'Brutal Type';
     margin: 0;
     padding: 0;
+    position: relative; 
 }
 
 nav {
@@ -195,6 +211,9 @@ aside {
     display: flex; 
     flex-direction: column;
     gap: 5.8rem;
+
+    margin-top: 10rem;
+    margin-bottom: 10rem;
 }
 
 /* FLEXBOX SHOWBLOKKEN */
@@ -431,7 +450,7 @@ footer button {
     border-radius: 25px 25px 0 0;
     cursor: pointer;
     position: absolute; 
-    top: 20%;    
+    top: 30px;    
     left: 50%; 
     translate: -50%;  
     z-index: 1; 
@@ -440,7 +459,7 @@ footer button {
 
 /* toonMenu */
 footer button.toonMenu { 
-    top: -20%; 
+    top: -30px; 
 }
 
 /* toonMenu */
