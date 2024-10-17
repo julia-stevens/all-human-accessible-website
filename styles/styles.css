@@ -83,6 +83,11 @@
     overflow:hidden;
 }
 
+:focus-visible {
+    outline: 3px dashed black; 
+    outline-offset: 6px; 
+}
+
 /* RESET SHOW BLOKKEN */
 .show-blok-veronica h2, p, ul {
     padding: 0; 
@@ -202,8 +207,9 @@ nav a {
 /* FLEXBOX TIJDLIJN & SHOW BLOKKEN */
 main {
     display: flex; 
-    gap: 2rem;
-    justify-content: center;
+    gap: 1rem;
+    justify-content: start;
+    margin-left: 10px;
 }
 
 /* TIJDLIJN */
@@ -356,6 +362,8 @@ aside {
 footer {
     display: grid; 
     place-items: center;
+    position: sticky; 
+    bottom: 1rem;
 }
 
 /* ZENDERS MENU */
@@ -368,11 +376,11 @@ footer {
     overflow-x: scroll;
     align-items: center;
     border-radius: .5rem;
-    position: relative; 
     translate: 0 100%; 
     transition: .3s ease;
     background-color: white;
     filter: drop-shadow(0px 0px 8px #bebebe);
+    z-index: 1;
 }   
 
 .zenders-menu li {
@@ -380,7 +388,7 @@ footer {
 }
 
 .zenders-menu.toonMenu{
-    translate: 0 0; 
+    translate: 0 0;
 }
 
 /* GRID LAYOUT PLAYER */
@@ -396,6 +404,7 @@ footer {
     max-width: 400px; 
     height: auto;
     padding: 1rem 0; 
+    z-index: 3;
 }
 
 /* PLAYER PROGRAMMA TITEL */
@@ -438,28 +447,24 @@ footer {
     background-position: center;
 }
 
-footer {
-    position: relative; 
-}
-
 /* PLAYER BUTTON */
 footer button {
     background-color: var(--highlight-pink);
     border: none;
-    padding: .1rem 3rem;
+    padding: .5rem 3rem;
     border-radius: 25px 25px 0 0;
     cursor: pointer;
     position: absolute; 
-    top: 30px;    
     left: 50%; 
-    translate: -50%;  
+    translate: -50% -80%;  
     z-index: 1; 
     transition: .3s ease;
 }
 
 /* toonMenu */
 footer button.toonMenu { 
-    top: -30px; 
+    /* top: -191.5%; */
+    translate: -50% -235%; 
 }
 
 /* toonMenu */
@@ -471,9 +476,5 @@ button img {
     width: 1.5rem;
 }
 
-footer {
-    position: fixed;
-    bottom: 1rem;
-    left: 50%; 
-    translate: -50%;  
-}
+
+
