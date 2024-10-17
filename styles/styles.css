@@ -4,6 +4,8 @@
     --highlight-pink: #FE0170;
     --sub-text: #8B8B8B;
     --sub-text-light: hsl(0, 0%, 83%);
+    --veronica-blue-dark: #00589E;
+    --highlight-pink-dark: #AC014E;
 }
 
 /* Font */
@@ -71,6 +73,23 @@
     font-style: normal;
 }
 
+/* SCREEN READER ONLY */
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+/* RESET SHOW BLOKKEN */
+.show-blok-veronica h2, p, ul {
+    padding: 0; 
+    margin: 0; 
+    list-style-type: none;
+}
+
 body {
     font-size: 16px;
     font-family: 'Brutal Type';
@@ -78,23 +97,85 @@ body {
     padding: 0;
 }
 
-/* main {
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-
-    gap: 5rem;
-} */
-
-/* H1 */
-h1 {
-    display: none;
+nav {
+    padding: 0 1rem;    
 }
 
-/* RESET SHOW BLOKKEN */
-.show-blok-veronica h2, p {
-    padding: 0; 
-    margin: 0; 
+/* WEERGAVE LINKS IN NAVIGATIE */
+nav a {
+    color: black; 
+    text-decoration: none;
+}
+
+/* FLEXBOX NAV-PAGINA */
+.nav-pagina {
+    display: flex; 
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: center;
+    max-width: 800px; 
+    height: 4rem;
+    overflow-x: scroll; 
+}
+
+.nav-pagina a {
+    text-transform: uppercase;
+    font-weight: bold; 
+}
+
+.nav-pagina li:first-of-type a {
+    color: var(--highlight-pink);
+}
+
+/* FLEXBOX NAV-WEEK */ 
+.nav-week {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;   
+    height: 4rem;
+}
+
+.nav-week li {
+    width: 14.29%;
+    padding: .8rem 0; 
+}
+
+.nav-week span:first-of-type {
+    /* FLEX als parent */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-week li:nth-of-type(2) a {
+    color: white; 
+}
+
+.nav-week li:nth-of-type(2) {
+    background-color: var(--highlight-pink);
+}
+
+/* FLEXBOX TIJDLIJN & SHOW BLOKKEN */
+main {
+    display: flex; 
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* TIJDLIJN */
+aside {
+    display: flex; 
+    flex-direction: column;
+    gap: 5.8rem;
+}
+
+/* FLEXBOX SHOWBLOKKEN */
+.programmering-veronica {
+    display: flex; 
+    flex-direction: column;
+    gap: .5rem; 
 }
 
 /* SHOW BLOKKEN */
@@ -109,8 +190,6 @@ h1 {
     width: 70vw;
     max-width: 450px;   
     overflow: hidden;
-
-    height: 18rem;
 }
 
 /* ACHTERGROND VERONICA */
@@ -129,7 +208,7 @@ h1 {
 .show-blok-veronica p:nth-of-type(1) {
     grid-column: 2/4;
     grid-row: 1/2;
-    background-color: var(--veronica-blue);
+    background-color: var(--veronica-blue-dark);
     color: white; 
     font-weight: bold; 
     align-self: center; 
@@ -213,30 +292,7 @@ h1 {
     width: .4rem; 
 }
 
-main {
-    /* display: grid; 
-    grid-template-columns: .5fr 3fr;
-    grid-template-rows: repeat(25, 1fr);
-    width: 540px;
-    gap: .8rem; */
-
-    display: flex; 
-    gap: 2rem;
-
-}
-
-aside {
-    display: flex; 
-    flex-direction: column;
-    gap: 5.8rem;
-}
-
-.programmering-veronica {
-    display: flex; 
-    flex-direction: column;
-    gap: .5rem;
-}
-
+/* HOOGTE SHOW BLOKKEN */
 .vier-uur {
     height: 28rem;
 
