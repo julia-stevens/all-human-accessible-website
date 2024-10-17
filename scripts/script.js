@@ -59,3 +59,54 @@ function hasScrolled() {
     
     lastScrollTop = st;
 }
+
+// current time (https://chatgpt.com/c/67114d40-6430-800f-aeeb-d2b590634f91)
+
+function updateCurrentTimeIndicator() {
+    const currentTimeIndicator = document.getElementById('current-time');
+    const timeElements = document.querySelectorAll('aside time'); // Select all time elements
+    const now = new Date(); // Get current time
+    const totalMinutesInDay = 24 * 60; // Total minutes in a day (1440 minutes)
+    const currentMinutes = now.getHours() * 60 + now.getMinutes(); // Current time in minutes
+
+    // Calculate the position as a fraction of the total time
+    const indicatorPositionFraction = currentMinutes / totalMinutesInDay;
+
+    // Get the heights and positions of time elements
+    const aside = document.querySelector('aside');
+    const asideHeight = aside.clientHeight;
+
+    // Calculate the position based on the fraction of the total height
+    const indicatorPosition = asideHeight * indicatorPositionFraction;
+
+    // Update the position of the current time indicator
+    currentTimeIndicator.style.top = `${indicatorPosition}px`;
+
+    // Display the current time next to the indicator
+    const currentFormattedTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    
+    // Remove previous time display if it exists
+    const existingDisplay = document.querySelector('.current-time-display');
+    if (existingDisplay) {
+        existingDisplay.remove();
+    }
+
+    // Create and position the current time display
+    const timeDisplay = document.createElement('div');
+    timeDisplay.className = 'current-time-display'; // Create a class for styling if needed
+    timeDisplay.textContent = currentFormattedTime;
+
+    // Position the current time display above the indicator
+    timeDisplay.style.position = 'absolute';
+    timeDisplay.style.top = `${indicatorPosition - 20}px`; // Adjust based on your design
+    timeDisplay.style.left = '5%'; // Align with the indicator
+
+    // Append the time display to the aside
+    aside.appendChild(timeDisplay);
+}
+
+// Update the current time indicator on page load
+updateCurrentTimeIndicator();
+
+// Update the indicator every second (1000 ms) for real-time display
+setInterval(updateCurrentTimeIndicator, 1000);

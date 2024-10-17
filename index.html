@@ -19,43 +19,43 @@
         </ul>
 
         <ul class="nav-week">
-            <li tabindex="0">
+            <li>
                 <a href="#">
                     <span aria-hidden="true">Ma <strong>23</strong></span>
                     <span class="sr-only">Maandag 23 september</span>
                 </a>
             </li>
-            <li tabindex="0">
+            <li>
                 <a href="#">
                     <span aria-hidden="true">Di <strong>24</strong></span>
                     <span class="sr-only">Dinsdag 24 september</span>
                 </a>
             </li>
-            <li tabindex="0">
+            <li>
                 <a href="#">
                     <span aria-hidden="true">Woe <strong>25</strong></span>
                     <span class="sr-only">Woensdag 25 september</span>
                 </a>
             </li>
-            <li tabindex="0">
+            <li>
                 <a href="#">
                     <span aria-hidden="true">Do <strong>26</strong></span>
                     <span class="sr-only">Donderdag 26 september</span>
                 </a>
             </li>
-            <li tabindex="0">
+            <li>
                 <a href="#">
                     <span aria-hidden="true">Vr <strong>27</strong></span>
                     <span class="sr-only">Vrijdag 27 september</span>
                 </a>
             </li>
-            <li tabindex="0">
+            <li>
                 <a href="#">
                     <span aria-hidden="true">Za <strong>28</strong></span>
                     <span class="sr-only">Zaterdag 28 september</span>
                 </a>
             </li>
-            <li tabindex="0">
+            <li>
                 <a href="#">
                     <span aria-hidden="true">Zo <strong>29</strong></span>
                     <span class="sr-only">Zondag 29 september</span>
@@ -68,6 +68,8 @@
         <h1 class="sr-only">Programmering</h1>
 
         <aside aria-hidden="true"> <!-- https://www.w3.org/TR/wai-aria/#presentation -->
+            <div id="current-time" class="current-time-indicator"></div>
+
             <time datetime="00:00">00:00</time>
             <time datetime="01:00">01:00</time>
             <time datetime="02:00">02:00</time>
@@ -92,7 +94,7 @@
             <time datetime="21:00">21:00</time>
             <time datetime="22:00">22:00</time>
             <time datetime="23:00">23:00</time>
-            <time datetime="23:00">23:59</time>
+            <time datetime="23:59">23:59</time>
         </aside>
 
         <ul class="programmering-veronica" id="programmering-veronica">
@@ -223,7 +225,7 @@
     <footer>
         <h2 class="sr-only">Overzicht radiozenders</h2>
 
-        <button><img src="./assets/circle-up.svg" alt="Bekijk de programmering van andere radiozenders"></button>
+        <button aria-label="Bekijk de programmering van andere radiozenders"><img src="./assets/circle-up.svg" alt=""></button>
         
         <ul class="zenders-menu">
             <li>
@@ -247,7 +249,7 @@
             <h2>Goud Van Oud</h2>
             <p>Back To Black - Amy Winehouse</p>
             <img src="./assets/back-to-black-thumbnail.png" alt="Album cover Back to Black" width="150">
-            <a href="#" aria-label="Speel af/Pauzeer" tabindex="0"></a>
+            <a href="#" aria-label="Speel af/Pauzeer"></a>
         </section>
     </footer>
 

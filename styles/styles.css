@@ -83,7 +83,7 @@
     overflow:hidden;
 }
 
-:focus-visible {
+:focus-visible  {
     outline: 3px dashed black; 
     outline-offset: 6px; 
 }
@@ -154,6 +154,14 @@ nav a {
     font-weight: bold; 
 }
 
+.nav-pagina a:focus {
+    text-decoration: underline;
+}
+
+.nav-pagina a:hover {
+    text-decoration: underline;
+}
+
 .nav-pagina li:first-of-type a {
     color: var(--highlight-pink);
     padding-left: 1rem;
@@ -186,6 +194,15 @@ nav a {
 .nav-week li {
     width: 14.29%;
     padding: .8rem 0; 
+}
+
+.nav-week a:focus {
+    text-decoration: underline; 
+    display: block;
+}
+
+.nav-week a:hover {
+    text-decoration: underline;
 }
 
 .nav-week span:first-of-type {
@@ -403,7 +420,7 @@ footer {
     width: 90vw; 
     max-width: 400px; 
     height: auto;
-    padding: 1rem 0; 
+    padding: 1.3rem 0; 
     z-index: 3;
 }
 
@@ -476,5 +493,35 @@ button img {
     width: 1.5rem;
 }
 
+/* .current-time-indicator {
+    position: absolute; 
+    left: 5%; 
+    width: 70%; 
+    height: 2px; 
+    background-color: var(--highlight-pink);
+} */
 
+aside {
+    position: relative; 
+}
+
+.current-time-indicator {
+    position: absolute; 
+    left: 0; /* Aligns to the left side of the aside */
+    width: 100vw; /* Full width of the aside */
+    height: 2px; /* Height of the indicator line */
+    background-color: var(--highlight-pink); /* Color of the line */
+    transition: top 0.5s ease; /* Smooth transition for the indicator movement */
+}
+
+.current-time-display {
+    position: absolute; /* Position it absolutely */
+    left: 10px; /* Adjust this based on your layout */
+    color: white; /* Or any color you prefer */
+    font-weight: bold; /* Make it stand out */
+    background-color: var(--highlight-pink); /* Optional: background for better visibility */
+    padding: 2px 5px; /* Padding for aesthetics */
+    border-radius: 5px; /* Rounded corners */
+    translate: -5% 35%; 
+}
 
