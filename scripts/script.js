@@ -60,31 +60,48 @@ function hasScrolled() {
     lastScrollTop = st;
 }
 
-// current time (https://chatgpt.com/c/67114d40-6430-800f-aeeb-d2b590634f91)
+// current time
 
 function updateCurrentTimeIndicator() {
     const currentTimeIndicator = document.getElementById('current-time');
-    const timeElements = document.querySelectorAll('aside time'); // Select all time elements
-    const now = new Date(); // Get current time
-    const totalMinutesInDay = 24 * 60; // Total minutes in a day (1440 minutes)
-    const currentMinutes = now.getHours() * 60 + now.getMinutes(); // Current time in minutes
+    const timeElements = document.querySelectorAll('aside time');
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinutes = now.getMinutes();
 
-    // Calculate the position as a fraction of the total time
-    const indicatorPositionFraction = currentMinutes / totalMinutesInDay;
-
-    // Get the heights and positions of time elements
+    // Get the first and last time element positions to calculate the total height
+    const firstTimeElement = timeElements[0];
+    const lastTimeElement = timeElements[timeElements.length - 1];
+    
     const aside = document.querySelector('aside');
-    const asideHeight = aside.clientHeight;
+    
+    // Get the offsetTop of the first and last time elements
+    const firstTimeTop = firstTimeElement.offsetTop;
+    const lastTimeTop = lastTimeElement.offsetTop;
 
-    // Calculate the position based on the fraction of the total height
-    const indicatorPosition = asideHeight * indicatorPositionFraction;
+    // Calculate the total available height between the first and last time elements
+    const totalTimeHeight = lastTimeTop - firstTimeTop;
+
+    // Total number of hours (from 00:00 to 23:59 -> 24 hours)
+    const totalHours = 24;
+
+    // Calculate the height per hour based on the total height available
+    const heightPerHour = totalTimeHeight / totalHours;
+
+    // Calculate the exact position for the current hour and minute
+    const currentHourPosition = (currentHour * heightPerHour) + firstTimeTop;
+    const minuteFraction = currentMinutes / 60; // Fraction of the hour
+    const indicatorPosition = currentHourPosition + (minuteFraction * heightPerHour);
+
+    // Apply a small offset (e.g., +3px) to move the indicator slightly downward
+    const adjustedPosition = indicatorPosition + 3;  // Adjust this value as needed
 
     // Update the position of the current time indicator
-    currentTimeIndicator.style.top = `${indicatorPosition}px`;
+    currentTimeIndicator.style.top = `${adjustedPosition}px`;
 
     // Display the current time next to the indicator
     const currentFormattedTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-    
+
     // Remove previous time display if it exists
     const existingDisplay = document.querySelector('.current-time-display');
     if (existingDisplay) {
@@ -98,7 +115,7 @@ function updateCurrentTimeIndicator() {
 
     // Position the current time display above the indicator
     timeDisplay.style.position = 'absolute';
-    timeDisplay.style.top = `${indicatorPosition - 20}px`; // Adjust based on your design
+    timeDisplay.style.top = `${adjustedPosition - 20}px`; // Adjust based on your design
     timeDisplay.style.left = '5%'; // Align with the indicator
 
     // Append the time display to the aside
