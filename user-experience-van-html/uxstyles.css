@@ -1,0 +1,7 @@
+:target {
+    border: 2px solid black;
+}
+
+input:hover, input:focus {
+    outline: 2px solid blue;
+  }
