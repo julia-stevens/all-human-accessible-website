@@ -8,6 +8,10 @@
     --highlight-pink-dark: #AC014E;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* Font */
 /* Extra Light */
 @font-face {
@@ -523,5 +527,262 @@ aside {
     padding: 2px 5px; /* Padding for aesthetics */
     border-radius: 5px; /* Rounded corners */
     translate: -5% 35%; 
+
+    @media screen and (min-width: 1100px) {
+        translate: -5% -35%; 
+    }
 }
+
+@media screen and (min-width: 1100px) {
+    footer {
+        position: static;
+        display: none;
+    }    
+
+    aside {
+        flex-direction: row; 
+        gap: 4.1rem;
+
+        grid-column: 2/3;
+        grid-row: 1/2;
+
+        margin: 0; 
+        margin-top: 1rem;
+        margin-left: 2rem;
+
+    }
+
+    .current-time-indicator {
+        width: 2px; 
+        height: 100vh; 
+    }
+
+    main {
+        max-width: 95vw; 
+        height: 70vh; 
+        overflow-x: scroll; 
+        overflow-y: hidden;
+
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
+
+        margin-top: 10rem;
+
+        position: relative;
+
+        gap: 0; 
+
+        background-color: white;
+        border-radius: .5rem;
+
+
+
+    }
+
+    /* beschrijving */
+    .show-blok-veronica p:nth-of-type(2) {
+        display: none; 
+    }
+
+    /* naam dj */
+    .show-blok-veronica p:nth-of-type(3) {
+        display: none; 
+    }
+
+    /* grid show blok */
+    .show-blok-veronica {
+        display: grid; 
+        grid-template-columns: .04fr .5fr auto .2fr;
+        grid-template-rows: 1fr 1fr;
+        height: 6rem;
+        gap: 0;
+        padding: 0; 
+        margin: 0; 
+        filter: drop-shadow(0px 0px 0px white); 
+    }
+
+    .show-blok-veronica .gekleurd-blokje {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    .show-blok-veronica h2 {
+        grid-column: 3/-1; 
+        grid-row: 1/2;
+        justify-self: start;
+        align-self: center;
+    }
+
+    .show-blok-veronica p:first-of-type {
+        grid-column: 3/4;
+        grid-row: 2/3;
+        justify-self: start;
+        align-self: start;
+    }
+
+    .show-blok-veronica img {
+        grid-column: 2/3;
+        grid-row: 1/-1;
+        height: 80%; 
+        align-self: center;
+        justify-self: start;
+    }
+
+    .show-blok-veronica a {
+        grid-column: 4/5;
+        grid-row: 2/3;
+        justify-self: center;
+        align-self: center; 
+    }
+
+     .programmering-veronica {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        
+        margin: 0; 
+        flex-direction: row; 
+        align-self: center;
+
+        /* background-color: white; */
+        border-radius: .5rem;
+        filter: drop-shadow(0px 0px 8px #bebebe);
+
+        margin-left: 2rem;
+
+    }
+
+    .programmering-slam {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        
+        margin: 0; 
+        display: flex; 
+        flex-direction: row; 
+        align-self: center;
+        gap: .5rem;
+
+        /* background-color: white; */
+        border-radius: .5rem;
+        filter: drop-shadow(0px 0px 8px #bebebe);
+
+        margin-left: 2rem;
+    }
+
+    .programmering-100p {
+        grid-column: 2/3;
+        grid-row: 4/5;
+        
+        margin: 0; 
+        display: flex; 
+        flex-direction: row; 
+        align-self: center;
+        gap: .5rem;
+
+        /* background-color: white; */
+        border-radius: .5rem;
+        filter: drop-shadow(0px 0px 8px #bebebe);
+
+        margin-left: 2rem;
+    }
+
+    .programmering-sublime {
+        grid-column: 2/3;
+        grid-row: 5/6;
+        
+        margin: 0; 
+        display: flex; 
+        flex-direction: row; 
+        align-self: center;
+        gap: .5rem;
+
+        /* background-color: white; */
+        border-radius: .5rem;
+        filter: drop-shadow(0px 0px 8px #bebebe);
+
+        margin-left: 2rem;
+    }
+
+    .vier-uur {
+        width: 26.5rem;
+    }
+
+    .twee-uur {
+        width: 12.8rem;
+    }
+
+    .drie-uur {
+        width: 19.5rem;
+    }
+
+    .twee-uur img {
+        display: none; 
+    }
+
+    .twee-uur a {
+        margin-right: .5rem;
+    }
+
+    .drie-uur p:first-of-type {
+        justify-self: start;
+    }
+
+    .veronica-logo {
+        grid-column: 1/2; 
+        grid-row: 2/3;
+        position: sticky; 
+        left: 0; 
+        height: 100%; 
+        display: grid; 
+        place-items: center;
+        padding: 0 1rem;
+        border-radius: .5rem .5rem 0 0;
+        background-color: white;
+        /* filter: drop-shadow(5px 0px 5px #bebebe); */
+        box-shadow: 0px 1px 15px -4px #bebebe;
+    }
+
+    .slam-logo {
+        grid-column: 1/2; 
+        grid-row: 3/4;
+        position: sticky; 
+        left: 0;
+        height: 100%; 
+        background-color: white;
+        /* filter: drop-shadow(5px 0px 5px #bebebe); */
+        display: grid; 
+        box-shadow: 0px 1px 15px -4px #bebebe;
+        place-items: center;
+    }
+
+    .honderdp-logo {
+        grid-column: 1/2; 
+        grid-row: 4/5;
+        position: sticky; 
+        left: 0;
+        height: 100%; 
+        background-color: white;
+        /* filter: drop-shadow(5px 0px 5px #bebebe); */
+        display: grid; 
+        box-shadow: 0px 1px 15px -4px #bebebe;
+        place-items: center;
+    }
+
+    .sublime-logo {
+        grid-column: 1/2; 
+        grid-row: 5/6; 
+        position: sticky; 
+        left: 0;
+        height: 100%; 
+        background-color: white;
+        /* filter: drop-shadow(5px 0px 5px #bebebe); */
+        display: grid; 
+        place-items: center;
+        box-shadow: 0px 1px 15px -4px #bebebe;
+        border-radius: 0 0 .5rem .5rem;
+
+    }
+
+}
+
 

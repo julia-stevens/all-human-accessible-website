@@ -69,35 +69,46 @@ function updateCurrentTimeIndicator() {
     const currentHour = now.getHours();
     const currentMinutes = now.getMinutes();
 
-    // Get the first and last time element positions to calculate the total height
+    // Get the first and last time element positions to calculate the total height/width
     const firstTimeElement = timeElements[0];
     const lastTimeElement = timeElements[timeElements.length - 1];
     
     const aside = document.querySelector('aside');
     
-    // Get the offsetTop of the first and last time elements
-    const firstTimeTop = firstTimeElement.offsetTop;
-    const lastTimeTop = lastTimeElement.offsetTop;
+    // Check the screen width
+    const isDesktop = window.innerWidth >= 1100;
 
-    // Calculate the total available height between the first and last time elements
-    const totalTimeHeight = lastTimeTop - firstTimeTop;
+    // Get the offset of the first and last time elements
+    const firstTimePosition = isDesktop ? firstTimeElement.offsetLeft : firstTimeElement.offsetTop;
+    const lastTimePosition = isDesktop ? lastTimeElement.offsetLeft : lastTimeElement.offsetTop;
+
+    // Calculate the total available height (mobile) or width (desktop) between the first and last time elements
+    const totalTimeSpan = lastTimePosition - firstTimePosition;
 
     // Total number of hours (from 00:00 to 23:59 -> 24 hours)
     const totalHours = 24;
 
-    // Calculate the height per hour based on the total height available
-    const heightPerHour = totalTimeHeight / totalHours;
+    // Calculate the size per hour based on the total available space (height for mobile, width for desktop)
+    const sizePerHour = totalTimeSpan / totalHours;
 
     // Calculate the exact position for the current hour and minute
-    const currentHourPosition = (currentHour * heightPerHour) + firstTimeTop;
+    const currentHourPosition = (currentHour * sizePerHour) + firstTimePosition;
     const minuteFraction = currentMinutes / 60; // Fraction of the hour
-    const indicatorPosition = currentHourPosition + (minuteFraction * heightPerHour);
+    const indicatorPosition = currentHourPosition + (minuteFraction * sizePerHour);
 
-    // Apply a small offset (e.g., +3px) to move the indicator slightly downward
+    // Apply a small offset (e.g., +3px) to move the indicator slightly
     const adjustedPosition = indicatorPosition + 3;  // Adjust this value as needed
 
     // Update the position of the current time indicator
-    currentTimeIndicator.style.top = `${adjustedPosition}px`;
+    if (isDesktop) {
+        // For desktop, align the indicator vertically (i.e., use 'left' positioning)
+        currentTimeIndicator.style.left = `${adjustedPosition}px`;
+        currentTimeIndicator.style.top = '';  // Reset top for desktop
+    } else {
+        // For mobile, align the indicator horizontally (i.e., use 'top' positioning)
+        currentTimeIndicator.style.top = `${adjustedPosition}px`;
+        currentTimeIndicator.style.left = '';  // Reset left for mobile
+    }
 
     // Display the current time next to the indicator
     const currentFormattedTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
@@ -113,10 +124,18 @@ function updateCurrentTimeIndicator() {
     timeDisplay.className = 'current-time-display'; // Create a class for styling if needed
     timeDisplay.textContent = currentFormattedTime;
 
-    // Position the current time display above the indicator
+    // Position the current time display near the indicator
     timeDisplay.style.position = 'absolute';
-    timeDisplay.style.top = `${adjustedPosition - 20}px`; // Adjust based on your design
-    timeDisplay.style.left = '5%'; // Align with the indicator
+
+    if (isDesktop) {
+        // For desktop, align the time display above the indicator (horizontally)
+        timeDisplay.style.left = `${adjustedPosition - 20}px`; // Adjust as needed
+        timeDisplay.style.top = '5%';  // Adjust based on your design
+    } else {
+        // For mobile, align the time display above the indicator (vertically)
+        timeDisplay.style.top = `${adjustedPosition - 20}px`; // Adjust as needed
+        timeDisplay.style.left = '5%'; // Adjust based on your design
+    }
 
     // Append the time display to the aside
     aside.appendChild(timeDisplay);
@@ -127,3 +146,7 @@ updateCurrentTimeIndicator();
 
 // Update the indicator every second (1000 ms) for real-time display
 setInterval(updateCurrentTimeIndicator, 1000);
+
+// Recalculate position on window resize to adapt for screen size changes
+window.addEventListener('resize', updateCurrentTimeIndicator);
+
