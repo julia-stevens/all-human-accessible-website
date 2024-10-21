@@ -533,6 +533,34 @@ aside {
     }
 }
 
+.programmering-100p {
+    display: none; 
+}
+
+.programmering-slam {
+    display: none;
+}
+
+.programmering-sublime {
+    display: none;
+}
+
+.veronica-logo {
+    display: none;
+}
+
+.honderdp-logo {
+    display: none;
+}
+
+.sublime-logo {
+    display: none;
+}
+
+.slam-logo {
+    display: none;
+}
+
 @media screen and (min-width: 1100px) {
     footer {
         position: static;
