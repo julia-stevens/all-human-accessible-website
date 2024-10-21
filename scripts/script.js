@@ -150,3 +150,35 @@ setInterval(updateCurrentTimeIndicator, 1000);
 // Recalculate position on window resize to adapt for screen size changes
 window.addEventListener('resize', updateCurrentTimeIndicator);
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the button that triggers the menu
+    const button = document.querySelector('.zenders-button');
+
+    // Select the menu items
+    const menuItems = document.querySelectorAll('#zenders-menu li a');
+
+    button.addEventListener('click', function() {
+        // Loop through all menu items
+        menuItems.forEach(function(anchor) {
+            // Change tabindex to 0 (make the link focusable)
+            anchor.setAttribute('tabindex', '0');
+        });
+
+        // Optionally, you can focus the first anchor or another specific anchor
+        if (menuItems.length > 0) {
+            menuItems[0].focus(); // Focus the first link, for example
+        }
+    });
+
+    // Add event listeners to each anchor to handle navigation
+    menuItems.forEach(function(anchor) {
+        anchor.addEventListener('click', function(event) {
+            // If the anchor has a valid href, navigate to it
+            if (this.href && this.href !== "#") {
+                window.location.href = this.href;
+            }
+            event.preventDefault(); // Prevent default behavior to avoid unwanted action if href is #
+        });
+    });
+});
+
