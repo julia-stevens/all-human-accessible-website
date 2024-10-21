@@ -147,7 +147,6 @@ nav a {
     inset: 0; 
     z-index: 1;
     transition: all .3s ease-in-out;
-
     border-bottom: solid 2px var(--sub-text-light);
 }
 
@@ -240,9 +239,33 @@ aside {
     display: flex; 
     flex-direction: column;
     gap: 5.8rem;
-
+    position: relative; 
     margin-top: 10rem;
     margin-bottom: 10rem;
+}
+
+.current-time-indicator {
+    position: absolute; 
+    left: 0; /* Aligns to the left side of the aside */
+    width: 100vw; /* Full width of the aside */
+    height: 2px; /* Height of the indicator line */
+    background-color: var(--highlight-pink); /* Color of the line */
+    transition: top 0.5s ease; /* Smooth transition for the indicator movement */
+}
+
+.current-time-display {
+    position: absolute; /* Position it absolutely */
+    left: 10px; /* Adjust this based on your layout */
+    color: white; /* Or any color you prefer */
+    font-weight: bold; /* Make it stand out */
+    background-color: var(--highlight-pink); /* Optional: background for better visibility */
+    padding: 2px 5px; /* Padding for aesthetics */
+    border-radius: 5px; /* Rounded corners */
+    translate: -5% 35%; 
+
+    @media screen and (min-width: 1100px) {
+        translate: -5% -35%; 
+    }
 }
 
 /* FLEXBOX SHOWBLOKKEN */
@@ -250,9 +273,12 @@ aside {
     display: flex; 
     flex-direction: column;
     gap: .5rem; 
-
     margin-top: 10rem;
     margin-bottom: 10rem;
+}
+
+.veronica-logo {
+    display: none;
 }
 
 /* SHOW BLOKKEN */
@@ -367,10 +393,33 @@ aside {
     width: .4rem; 
 }
 
+.programmering-100p {
+    display: none; 
+}
+
+.honderdp-logo {
+    display: none;
+}
+
+.programmering-slam {
+    display: none;
+}
+
+.slam-logo {
+    display: none;
+}
+
+.sublime-logo {
+    display: none;
+}
+
+.programmering-sublime {
+    display: none;
+}
+
 /* HOOGTE SHOW BLOKKEN */
 .vier-uur {
     height: 28rem;
-
 } 
 
 .twee-uur {
@@ -499,70 +548,9 @@ button img {
     width: 1.5rem;
 }
 
-/* .current-time-indicator {
-    position: absolute; 
-    left: 5%; 
-    width: 70%; 
-    height: 2px; 
-    background-color: var(--highlight-pink);
-} */
+/* Ik kies er voor om de media query apart te noteren en niet nesten, omdat het om een totaal andere layout gaat, en ik het overzichtelijker vind als dit bij elkaar staat */
 
-aside {
-    position: relative; 
-}
-
-.current-time-indicator {
-    position: absolute; 
-    left: 0; /* Aligns to the left side of the aside */
-    width: 100vw; /* Full width of the aside */
-    height: 2px; /* Height of the indicator line */
-    background-color: var(--highlight-pink); /* Color of the line */
-    transition: top 0.5s ease; /* Smooth transition for the indicator movement */
-}
-
-.current-time-display {
-    position: absolute; /* Position it absolutely */
-    left: 10px; /* Adjust this based on your layout */
-    color: white; /* Or any color you prefer */
-    font-weight: bold; /* Make it stand out */
-    background-color: var(--highlight-pink); /* Optional: background for better visibility */
-    padding: 2px 5px; /* Padding for aesthetics */
-    border-radius: 5px; /* Rounded corners */
-    translate: -5% 35%; 
-
-    @media screen and (min-width: 1100px) {
-        translate: -5% -35%; 
-    }
-}
-
-.programmering-100p {
-    display: none; 
-}
-
-.programmering-slam {
-    display: none;
-}
-
-.programmering-sublime {
-    display: none;
-}
-
-.veronica-logo {
-    display: none;
-}
-
-.honderdp-logo {
-    display: none;
-}
-
-.sublime-logo {
-    display: none;
-}
-
-.slam-logo {
-    display: none;
-}
-
+/* GRID LAYOUT VANAF 1100px */
 @media screen and (min-width: 1100px) {
     footer {
         position: static;
@@ -572,14 +560,11 @@ aside {
     aside {
         flex-direction: row; 
         gap: 4.1rem;
-
         grid-column: 2/3;
         grid-row: 1/2;
-
         margin: 0; 
         margin-top: 1rem;
         margin-left: 2rem;
-
     }
 
     .current-time-indicator {
@@ -592,22 +577,14 @@ aside {
         height: 70vh; 
         overflow-x: scroll; 
         overflow-y: hidden;
-
         display: grid; 
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(5, auto);
-
         margin-top: 10rem;
-
         position: relative;
-
         gap: 0; 
-
         background-color: white;
         border-radius: .5rem;
-
-
-
     }
 
     /* beschrijving */
@@ -669,15 +646,12 @@ aside {
      .programmering-veronica {
         grid-column: 2/3;
         grid-row: 2/3;
-        
         margin: 0; 
         flex-direction: row; 
         align-self: center;
-
         /* background-color: white; */
         border-radius: .5rem;
         filter: drop-shadow(0px 0px 8px #bebebe);
-
         margin-left: 2rem;
 
     }
@@ -685,51 +659,42 @@ aside {
     .programmering-slam {
         grid-column: 2/3;
         grid-row: 3/4;
-        
         margin: 0; 
         display: flex; 
         flex-direction: row; 
         align-self: center;
         gap: .5rem;
-
         /* background-color: white; */
         border-radius: .5rem;
         filter: drop-shadow(0px 0px 8px #bebebe);
-
         margin-left: 2rem;
     }
 
     .programmering-100p {
         grid-column: 2/3;
         grid-row: 4/5;
-        
         margin: 0; 
         display: flex; 
         flex-direction: row; 
         align-self: center;
         gap: .5rem;
-
         /* background-color: white; */
         border-radius: .5rem;
         filter: drop-shadow(0px 0px 8px #bebebe);
-
         margin-left: 2rem;
     }
 
     .programmering-sublime {
         grid-column: 2/3;
         grid-row: 5/6;
-        
         margin: 0; 
         display: flex; 
         flex-direction: row; 
         align-self: center;
         gap: .5rem;
-
         /* background-color: white; */
         border-radius: .5rem;
         filter: drop-shadow(0px 0px 8px #bebebe);
-
         margin-left: 2rem;
     }
 
