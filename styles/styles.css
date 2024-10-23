@@ -251,6 +251,10 @@ aside {
     height: 2px; /* Height of the indicator line */
     background-color: var(--highlight-pink); /* Color of the line */
     transition: top 0.5s ease; /* Smooth transition for the indicator movement */
+
+    @media screen and (min-width: 1100px) {
+        translate: 2.2rem 0; 
+    }
 }
 
 .current-time-display {
@@ -264,7 +268,7 @@ aside {
     translate: -5% 35%; 
 
     @media screen and (min-width: 1100px) {
-        translate: -5% -35%; 
+        translate: calc(-5% + 2rem) -35%; 
     }
 }
 
@@ -429,6 +433,8 @@ aside {
 .drie-uur {
     height: 20.8rem;  
 }
+
+
 
 /* GRID LAYOUT FOOTER */
 footer {
@@ -600,10 +606,10 @@ button img {
     /* grid show blok */
     .show-blok-veronica {
         display: grid; 
-        grid-template-columns: .04fr .5fr auto .2fr;
+        grid-template-columns: auto auto auto auto 1fr;
         grid-template-rows: 1fr 1fr;
         height: 6rem;
-        gap: 0;
+        gap: .5rem;
         padding: 0; 
         margin: 0; 
         filter: drop-shadow(0px 0px 0px white); 
@@ -699,15 +705,31 @@ button img {
     }
 
     .vier-uur {
-        width: 26.5rem;
+        width: 27.5rem;
     }
 
     .twee-uur {
-        width: 12.8rem;
+        width: 12.4rem;
     }
 
     .drie-uur {
         width: 19.5rem;
+    }
+    
+    .een-uur {
+        width: 6.75rem;
+    }
+
+    .een-uur img {
+        display: none;
+    }
+
+    .een-uur p:first-of-type {
+        display: none;
+    }
+
+    .een-uur h2 {
+        font-size: 90%;
     }
 
     .twee-uur img {
@@ -720,6 +742,30 @@ button img {
 
     .drie-uur p:first-of-type {
         justify-self: start;
+    }
+
+    .drie-uur-slam {
+        width: 19.8rem;
+    }
+
+    .drie-uur-sub {
+        width: 18.2rem;
+    }
+
+    .vier-uur-slam {
+        width: 24.5rem;
+    }
+
+    .twee-uur-sub {
+        width: 15rem;
+    }
+
+    .drie-uur-honderdp {
+        width: 18rem;
+    }
+
+    .twee-uur-honderdp {
+        width: 14rem;
     }
 
     .veronica-logo {
@@ -782,7 +828,38 @@ button img {
         /* box-shadow: 0px 1px 15px -4px #bebebe; */
         border-right: solid 2px var(--sub-text-light);
         /* border-radius: 0 0 .5rem .5rem; */
+    }
 
+    .sublime .gekleurd-blokje {
+        background-color: #1a1e1d;
+    }
+
+    .sublime a {
+        background-color: #92C01F;
+    }
+
+    .sublime p:first-of-type {
+        background-color: #1a1e1d;
+    }
+
+    .honderdp .gekleurd-blokje {
+        background-color: #ef7d00;
+    }
+
+    .honderdp a {
+        background-color: #0fa637;
+    }
+
+    .honderdp p:first-of-type {
+        background-color: #ef7d00;
+    }
+
+    .slam .gekleurd-blokje {
+        background-color: black;
+    }
+
+    .slam p:first-of-type {
+        background-color: black;
     }
 
 }

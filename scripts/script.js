@@ -60,7 +60,7 @@ function hasScrolled() {
     lastScrollTop = st;
 }
 
-// current time
+// current time !!BRON!!: 
 
 function updateCurrentTimeIndicator() {
     const currentTimeIndicator = document.getElementById('current-time');
