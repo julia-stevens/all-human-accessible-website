@@ -79,13 +79,14 @@
 
 /* SCREEN READER ONLY */
 .sr-only {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+    position: absolute; /* Zet het element op een absolute positie ten opzichte van de eerstvolgende gepositioneerde ouder */
+    left: -10000px; /* Verplaatst het element volledig buiten het zichtbare scherm, links uit beeld */
+    top: auto; /* Laat de top-positie automatisch bepalen (niet relevant hier vanwege de left-instelling) */
+    width: 1px; /* Maakt het element extreem smal, slechts 1 pixel breed */
+    height: 1px; /* Maakt het element ook extreem laag, slechts 1 pixel hoog */
+    overflow: hidden; /* Verbergt eventuele overlopende inhoud van het element, zodat er niets zichtbaar is */
 }
+
 
 :focus-visible  {
     outline: 3px dashed black; 
@@ -134,21 +135,22 @@ nav a {
 
 /* FLEXBOX NAV-PAGINA */
 .nav-pagina {
-    display: flex; 
-    justify-content: space-between;
-    gap: 3rem;
-    align-items: center;
-    width: 100vw; 
-    max-width: 800px; 
-    height: 4rem;
-    overflow-x: scroll; 
-    background-color: white; 
-    position: fixed; 
-    inset: 0; 
-    z-index: 1;
-    transition: all .3s ease-in-out;
-    border-bottom: solid 2px var(--sub-text-light);
+    display: flex; /* Gebruikt flexbox om de inhoud van het navigatie-element op een rij te plaatsen */
+    justify-content: space-between; /* Verspreidt de inhoud gelijkmatig over de beschikbare ruimte, met ruimte tussen de items */
+    gap: 3rem; /* Voegt een ruimte van 3 rem toe tussen elk item in de flex-container */
+    align-items: center; /* Centreert de items verticaal binnen het element */
+    width: 100vw; /* Stelt de breedte van het element in op 100% van het viewport-breedte, oftewel de volledige breedte van het scherm */
+    max-width: 800px; /* Beperkt de maximale breedte van het element tot 800px, ongeacht de schermgrootte */
+    height: 4rem; /* Stelt de hoogte van het element in op 4 rem (ongeveer 64 pixels, afhankelijk van de standaard lettergrootte) */
+    overflow-x: scroll; /* Maakt horizontaal scrollen mogelijk als de inhoud breder is dan de container */
+    background-color: white; /* Stelt de achtergrondkleur van het element in op wit */
+    position: fixed; /* Plaatst het element vast in het venster, zodat het op dezelfde positie blijft tijdens scrollen */
+    inset: 0; /* Plaatst het element aan de bovenkant, links en rechts op 0, wat het element volledig aan de bovenkant van het scherm uitlijnt */
+    z-index: 1; /* Zorgt ervoor dat dit element boven andere elementen wordt weergegeven (z-index bepaalt de volgorde van lagen) */
+    transition: all .3s ease-in-out; /* Voegt een overgangseffect van 0,3 seconden toe voor alle eigenschappen, met een vloeiende overgang */
+    border-bottom: solid 2px var(--sub-text-light); /* Voegt een onderrand van 2px toe aan het element, met een kleur die is gedefinieerd door de variabele --sub-text-light */
 }
+
 
 .nav-pagina-up {
     translate: 0 -100%; 
@@ -167,8 +169,9 @@ nav a {
     text-decoration: underline;
 }
 
-.nav-pagina li:first-of-type a {
-    color: var(--highlight-pink);
+
+.nav-pagina li:first-of-type a { /* De link in de eerste list item van de .nav-pagina wordt hier geselecteerd */
+    color: var(--highlight-pink); /* Om een roze kleur mee te geven */
     padding-left: 1rem;
 }
 
@@ -202,8 +205,8 @@ nav a {
 }
 
 .nav-week a:focus {
-    text-decoration: underline; 
-    display: block;
+    text-decoration: underline; /* Voegt een onderstreping toe aan de tekst wanneer de link de focus heeft */
+    display: block; /* Verandert de weergave van de link naar een block-element, zodat het de volledige breedte van zijn container inneemt */
 }
 
 .nav-week a:hover {
@@ -287,29 +290,18 @@ aside {
 
 /* SHOW BLOKKEN */
 .show-blok-veronica {
-    display: grid; 
-    grid-template-columns: .04fr 1fr 2fr .04fr;
-    grid-template-rows: auto auto auto auto 1fr;
-    gap: .5rem;
-    border-radius: .5rem;
-    background-color: white;
-    filter: drop-shadow(0px 0px 8px #bebebe);
-    width: 70vw;
-    max-width: 450px;   
-    overflow: hidden;
+    display: grid; /* Het element wordt weergegeven als een grid, waardoor je items in rijen en kolommen kunt plaatsen */
+    grid-template-columns: .04fr 1fr 2fr .04fr; /* Definieert vier kolommen: de eerste en laatste zijn smal (.04fr), de tweede is 1fr (een fractie van de beschikbare ruimte), en de derde is 2fr (dubbel zo breed als de tweede) */
+    grid-template-rows: auto auto auto auto 1fr; /* Definieert vijf rijen: de eerste vier rijen zijn automatisch afhankelijk van de inhoud, en de vijfde rij neemt de resterende ruimte in (1fr) */
+    gap: .5rem; /* Er wordt een ruimte van 0,5 rem tussen de grid-items geplaatst */
+    border-radius: .5rem; /* De hoeken van het element worden afgerond met een straal van 0,5 rem */
+    background-color: white; /* De achtergrondkleur van het element wordt ingesteld op wit */
+    filter: drop-shadow(0px 0px 8px #bebebe); /* Er wordt een lichte schaduw aan het element toegevoegd, met een grijze tint (#bebebe) en een wazige straal van 8 pixels */
+    width: 70vw; /* De breedte van het element is 70% van het vensterbreedte (viewport width) */
+    max-width: 450px;   /* De maximale breedte van het element is 450 pixels, zodat het niet groter wordt dan dit, zelfs als de viewport groter is */
+    overflow: hidden; /* Inhoud die buiten de grenzen van het element valt, wordt verborgen */
 }
 
-/* ACHTERGROND VERONICA */
-/* .show-blok-veronica::before {
-    content: "";
-    background-image: url(../assets/radio-veronica-bg.png);
-    background-size: contain;
-    background-repeat: no-repeat; 
-    background-position: center;
-    position: absolute; 
-    inset: 0; 
-    opacity: .1;
-} */
 
 /* TIJD */
 .show-blok-veronica p:nth-of-type(1) {
@@ -383,10 +375,12 @@ aside {
     border-radius: 50%;
     background-color: var(--highlight-pink);
     font-size: clamp(.5rem, 1.5vw, .7rem);
-    background-image: url('../assets/arrow-right.svg');
-    background-repeat: no-repeat;
-    background-size: 1.2em;
-    background-position: center;
+    display: grid; 
+    place-items: center;
+}
+
+.show-blok-veronica a img {
+    width: 1.5em;
 }
 
 /* GEKLEURD BLOK */
@@ -563,6 +557,7 @@ button img {
         display: none;
     }    
 
+    /* TIJDLIJN */
     aside {
         flex-direction: row; 
         gap: 4.1rem;
@@ -578,13 +573,14 @@ button img {
         height: 100vh; 
     }
 
+    /* GRID LAYOUT met 2 kolommen en 5 rijen */
     main {
         max-width: 95vw; 
         height: 70vh; 
         overflow-x: scroll; 
         overflow-y: hidden;
         display: grid; 
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(5, auto);
         margin-top: 10rem;
         position: relative;
@@ -615,11 +611,13 @@ button img {
         filter: drop-shadow(0px 0px 0px white); 
     }
 
+    /* Gekleurde veritcale lijn */
     .show-blok-veronica .gekleurd-blokje {
         grid-column: 1/2;
         grid-row: 1/3;
     }
 
+    /* Titel programma */
     .show-blok-veronica h2 {
         grid-column: 3/-1; 
         grid-row: 1/2;
@@ -627,6 +625,7 @@ button img {
         align-self: center;
     }
 
+    /* Tijd */
     .show-blok-veronica p:first-of-type {
         grid-column: 3/4;
         grid-row: 2/3;
@@ -634,6 +633,7 @@ button img {
         align-self: start;
     }
 
+    /* Thumbnail */
     .show-blok-veronica img {
         grid-column: 2/3;
         grid-row: 1/-1;
@@ -642,6 +642,7 @@ button img {
         justify-self: start;
     }
 
+    /* Link */
     .show-blok-veronica a {
         grid-column: 4/5;
         grid-row: 2/3;
@@ -649,6 +650,7 @@ button img {
         align-self: center; 
     }
 
+    /* Lijst programmering veronica */
      .programmering-veronica {
         grid-column: 2/3;
         grid-row: 2/3;
@@ -662,6 +664,7 @@ button img {
 
     }
 
+    /* Lijst programmering SLAM! */
     .programmering-slam {
         grid-column: 2/3;
         grid-row: 3/4;
@@ -676,6 +679,7 @@ button img {
         margin-left: 2rem;
     }
 
+    /* Lijst programmering 100% NL */
     .programmering-100p {
         grid-column: 2/3;
         grid-row: 4/5;
@@ -690,6 +694,7 @@ button img {
         margin-left: 2rem;
     }
 
+    /* Lijst programmering Sublime */
     .programmering-sublime {
         grid-column: 2/3;
         grid-row: 5/6;
@@ -704,6 +709,7 @@ button img {
         margin-left: 2rem;
     }
 
+    /* Breedte show blokken */
     .vier-uur {
         width: 27.5rem;
     }
@@ -732,7 +738,7 @@ button img {
         font-size: 90%;
     }
 
-    .twee-uur img {
+    .twee-uur > img {
         display: none; 
     }
 
@@ -768,6 +774,7 @@ button img {
         width: 14rem;
     }
 
+    /* Positionering logo's radiozenders: Veronica, SLAM!, 100% NL, Sublime */
     .veronica-logo {
         grid-column: 1/2; 
         grid-row: 2/3;
@@ -777,10 +784,7 @@ button img {
         display: grid; 
         place-items: center;
         padding: 0 1rem;
-        /* border-radius: .5rem .5rem 0 0; */
         background-color: white;
-        /* filter: drop-shadow(5px 0px 5px #bebebe); */
-        /* box-shadow: 0px 1px 15px -4px #bebebe; */
         border-right: solid 2px var(--sub-text-light);
 }
 
@@ -791,10 +795,7 @@ button img {
         left: 0;
         height: 100%; 
         background-color: white;
-        /* filter: drop-shadow(5px 0px 5px #bebebe); */
         display: grid; 
-        /* filter: drop-shadow(5px 0px 5px #bebebe); */
-        /* box-shadow: 0px 1px 15px -4px #bebebe; */
         border-right: solid 2px var(--sub-text-light);
         place-items: center;
     }
@@ -806,10 +807,7 @@ button img {
         left: 0;
         height: 100%; 
         background-color: white;
-        /* filter: drop-shadow(5px 0px 5px #bebebe); */
         display: grid; 
-        /* filter: drop-shadow(5px 0px 5px #bebebe); */
-        /* box-shadow: 0px 1px 15px -4px #bebebe; */
         border-right: solid 2px var(--sub-text-light);
         place-items: center;
     }
@@ -821,17 +819,14 @@ button img {
         left: 0;
         height: 100%; 
         background-color: white;
-        /* filter: drop-shadow(5px 0px 5px #bebebe); */
         display: grid; 
         place-items: center;
-        /* filter: drop-shadow(5px 0px 5px #bebebe); */
-        /* box-shadow: 0px 1px 15px -4px #bebebe; */
         border-right: solid 2px var(--sub-text-light);
-        /* border-radius: 0 0 .5rem .5rem; */
     }
-
+    
+    /* Gekleurde veritcale lijn */
     .sublime .gekleurd-blokje {
-        background-color: #1a1e1d;
+        background-color: #92C01F;
     }
 
     .sublime a {
@@ -842,26 +837,29 @@ button img {
         background-color: #1a1e1d;
     }
 
+    /* Gekleurde veritcale lijn */
     .honderdp .gekleurd-blokje {
         background-color: #ef7d00;
     }
 
     .honderdp a {
-        background-color: #0fa637;
-    }
-
-    .honderdp p:first-of-type {
         background-color: #ef7d00;
     }
 
+    .honderdp p:first-of-type {
+        background-color: #0A7B28;
+    }
+    
+    /* Gekleurde veritcale lijn */
     .slam .gekleurd-blokje {
-        background-color: black;
+        background-color: var(--highlight-pink-dark);
     }
 
     .slam p:first-of-type {
         background-color: black;
     }
 
+    .slam a {
+        background-color: var(--highlight-pink-dark);
+    }
 }
-
-

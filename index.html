@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
+    <!-- SKIP LINK -->
     <a href="#programmering-veronica" class="skip-link">Skip naar programmering</a>
 
+    <!-- HEADER met pagina navigatie & week navigatie -->
     <header>
         <nav>
             <ul class="nav-pagina">
@@ -22,8 +24,8 @@
             <ul class="nav-week">
                 <li>
                     <a href="#">
-                        <span aria-hidden="true">Ma <strong>23</strong></span>
-                        <span class="sr-only">Maandag 23 september</span>
+                        <span aria-hidden="true">Ma <strong>23</strong></span> <!-- Ma 23 moet niet voorgelezen worden door screen reader, want dit is niet heel duidelijk -->
+                        <span class="sr-only">Maandag 23 september</span> <!-- Dit wordt wel voorgelezen -->
                     </a>
                 </li>
                 <li>
@@ -71,6 +73,7 @@
         <aside aria-hidden="true"> <!-- https://www.w3.org/TR/wai-aria/#presentation -->
             <div id="current-time" class="current-time-indicator"></div>
 
+            <!-- TIME met aria-hidden=true, zodat dit niet door screen reader wordt voorgelezen -->
             <time datetime="00:00">00:00</time>
             <time datetime="01:00">01:00</time>
             <time datetime="02:00">02:00</time>
@@ -98,6 +101,7 @@
             <time datetime="23:59">23:59</time>
         </aside>
 
+        <!-- Programmering Veronica -->
         <ul class="programmering-veronica" id="programmering-veronica">
             <li>
                 <article class="show-blok-veronica vier-uur">
@@ -107,8 +111,7 @@
                     <p>Je hoort de beste muziek van Radio Veronica non-stop in Oh Wat Een Nacht! </p>
                     <img src="./assets/veronica-thumbnail-programma.jpg" alt="Thumbnail Radio Veronica" width="150">
                     <p>Radio Veronica</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over oh wat een nacht"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Oh Wat Een Nacht"></a>
                 </article>
             </li>
 
@@ -120,8 +123,7 @@
                     <p>Tussen 04:00 en 06:00 uur word je wakker met Lisanne Bronkhorst in The Warming Up.</p>
                     <img src="./assets/lisanne-thumbnail.jpg" alt="Thumbnail Lisanne Bronkhorst" width="150">
                     <p>Lisanne Bronkhorst</p>
-                    <!-- <a href="#">Lees meer over <em>The Warming Up</em></a> -->
-                    <a href="#" aria-label="Lees meer over the warming up"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over The Warming Up"></a>
                 </article>
             </li>
 
@@ -134,8 +136,7 @@
                         door de ochtend: van 06:00 tot 09:00 uur.</p>
                     <img src="./assets/gerard-thumbnail.jpg" alt="Thumbnail Gerard Ekdom" width="150">
                     <p>Gerard Ekdom</p>
-                    <!-- <a href="#">Lees meer over <em>Ekdom In De Morgen</em></a>             -->
-                    <a href="#" aria-label="Lees meer over ekdom in de morgen"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Ekdom in de Morgen"></a>
                 </article>
             </li>
 
@@ -147,8 +148,7 @@
                     <p>Marisa draait elke werkdag van 09:00 tot 12:00 uur de muziek waar jij van houdt in Goud van Oud!</p>
                     <img src="./assets/marisa-thumbnail.jpg" alt="Thumbnail Marisa Heutink" width="150">
                     <p>Marisa Heutink</p>
-                    <!-- <a href="#">Lees meer over <em>Goud Van Oud</em></a>             -->
-                    <a href="#" aria-label="Lees meer over goud van oud"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Goud van Oud"></a>
                 </article>
             </li>
 
@@ -160,8 +160,7 @@
                     <p>De beste playlist tijdens de lunch.</p>
                     <img src="./assets/sander-thumbnail.jpg" alt="Thumbnail Sander Hoogendoorn" width="150">
                     <p>Sander Hoogendoorn</p>
-                    <!-- <a href="#">Lees meer over <em>Sander Hoogendoorn</em></a>             -->
-                    <a href="#" aria-label="Lees meer over sander hoogendoorn"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Sander Hoogendoorn"></a>
                 </article>
             </li>
 
@@ -175,8 +174,7 @@
                         app.</p>
                     <img src="./assets/rob-thumbnail.jpg" alt="Thumbnail Rob Stenders" width="150">
                     <p>Rob Stenders</p>
-                    <!-- <a href="#">Lees meer over <em>De Bonanza</em></a>             -->
-                    <a href="#" aria-label="Lees meer over de bonanza"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over de Bonanza"></a>
                 </article>
             </li>
 
@@ -189,8 +187,7 @@
                     <img src="./assets/wout-frank-thumbnail.jpg" alt="Thumbnail Wouter van der Goes & Frank van 't Hof"
                         width="150">
                     <p>Wouter van der Goes & Frank van 't Hof</p>
-                    <!-- <a href="#">Lees meer over <em>Wout & Frank</em></a>             -->
-                    <a href="#" aria-label="Lees meer over wout & frank"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Wout & Frank"></a>
                 </article>
             </li>
 
@@ -202,8 +199,7 @@
                     <p>Elke maandag t/m donderdag 19:00 - 21:00 uur.</p>
                     <img src="./assets/martijn-thumbnail.jpg" alt="Thumbnail Martijn Muijs" width="150">
                     <p>Martijn Muijs</p>
-                    <!-- <a href="#">Lees meer over <em>Martijn Muijs</em></a>             -->
-                    <a href="#" aria-label="Lees meer over martijn muijs"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Martijn Muijs"></a>
                 </article>
             </li>
 
@@ -216,12 +212,12 @@
                         de late avond.</p>
                     <img src="./assets/frank-thumbnail.jpg" alt="Thumbnail Frank van der Lende" width="150">
                     <p>Frank van der Lende</p>
-                    <!-- <a href="#">Lees meer over <em>Frank Tot Laat</em></a>             -->
-                    <a href="#" aria-label="Lees meer over frank tot laat"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Frank tot Laat"></a>
                 </article>
             </li>
         </ul>
 
+        <!-- Programmering SLAM -->
         <ul class="programmering-slam">
             <li>
                 <article class="show-blok-veronica drie-uur-slam slam">
@@ -231,8 +227,7 @@
                     <p>Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.</p>
                     <img src="./assets/slam-nonstop.png" alt="Thumbnail Radio Veronica" width="150">
                     <p>SLAM!</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over slam non stop"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Slam! Non-stop"></a>
                 </article>
             </li>
 
@@ -244,8 +239,7 @@
                     <p>Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.</p>
                     <img src="./assets/slam-nonstop.png" alt="Thumbnail Radio Veronica" width="150">
                     <p>SLAM!</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over slam non stop"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Slam! Non-stop"></a>
                 </article>
             </li>
 
@@ -257,8 +251,7 @@
                     <p></p>
                     <img src="./assets/marijn.png" alt="Thumbnail Marijn Oosterveen" width="150">
                     <p>Marijn Oosterveen/p>
-                    <!-- <a href="#">Lees meer over <em>The Warming Up</em></a> -->
-                    <a href="#" aria-label="Lees meer over marijn oosterveen"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Marijn Oosterveen"></a>
                 </article>
             </li>
 
@@ -270,8 +263,7 @@
                     <p>In Early Birds neemt Anoûl Hendriks je van maandag tot en met donderdag tussen 07.00 uur en 10.00 uur mee tijdens de start van je werkdag met een frisse kijk op de wereld, actuele onderwerpen en vooral veel muziek.</p>
                     <img src="./assets/anoul.png" alt="Thumbnail Anoûl Hendriks" width="150">
                     <p>Anoûl Hendriks</p>
-                    <!-- <a href="#">Lees meer over <em>Ekdom In De Morgen</em></a>             -->
-                    <a href="#" aria-label="Lees meer over early birds"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Early Birds"></a>
                 </article>
             </li>
 
@@ -283,8 +275,7 @@
                     <p></p>
                     <img src="./assets/patrick.png" alt="Thumbnail Patrick Wolda" width="150">
                     <p>Patrick Wolda</p>
-                    <!-- <a href="#">Lees meer over <em>Goud Van Oud</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Patrick Wolda"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Patrick Wolda"></a>
                 </article>
             </li>
 
@@ -296,8 +287,7 @@
                     <p>Get ready for the lunch en wees voorbereid op een trip down memory lane, want de playlist gaat alle kanten op. Van clubknallers uit de 00's, naar hiphopbangers uit de 90's, dikke hits van nu, maar ook typische guilty pleasures. Je hoort het allemaal voorbij komen in één mix!</p>
                     <img src="./assets/housuh.png" alt="Thumbnail Raoul Schram" width="150">
                     <p>Raoul Schram</p>
-                    <!-- <a href="#">Lees meer over <em>Sander Hoogendoorn</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Housuh in de Pauzuh"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Housuh in de Pauzuh"></a>
                 </article>
             </li>
 
@@ -309,8 +299,7 @@
                     <p></p>
                     <img src="./assets/thomas.png" alt="Thumbnail Thomas van Empelen" width="150">
                     <p>Thomas van Empelen</p>
-                    <!-- <a href="#">Lees meer over <em>De Bonanza</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Thomas van Empelen"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Thomas van Empelen"></a>
                 </article>
             </li>
 
@@ -323,8 +312,7 @@
                     <img src="./assets/wout-frank-thumbnail.jpg" alt="Thumbnail Wouter van der Goes & Frank van 't Hof"
                         width="150">
                     <p>Jarno van der Wielen, Erik-Jan Rosendahl en Julia Maan</p>
-                    <!-- <a href="#">Lees meer over <em>Wout & Frank</em></a>             -->
-                    <a href="#" aria-label="Lees meer over SLAM! Middagshow"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over SLAM! Middagshow"></a>
                 </article>
             </li>
 
@@ -336,12 +324,12 @@
                     <p>Tijdens SLAM! non-stop hoor je de beste tracks van dit moment non-stop achter elkaar.Of je nu op zoek bent naar de nieuwste dance hits, popnummers of de laatste releases, dit programma zorgt ervoor dat je avond compleet is met geweldige muziek.</p>
                     <img src="./assets/slam-nonstop.png" alt="Thumbnail Radio Veronica" width="150">
                     <p>SLAM!</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over slam non stop"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over SLAM! Non-stop"></a>
                 </article>
             </li>
         </ul>
 
+        <!-- Programmering 100% NL -->
         <ul class="programmering-100p">
             <li>
                 <article class="show-blok-veronica drie-uur honderdp">
@@ -350,8 +338,7 @@
                     <p>00:00 - 06:00</p>
                     <p></p>
                     <p>100% NL Non-stop</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over 100% NL Non-stop"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over 100% NL Non-stop"></a>
                 </article>
             </li>
 
@@ -362,8 +349,7 @@
                     <p>00:00 - 06:00</p>
                     <p></p>
                     <p>100% NL Non-stop</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over 100% NL Non-stop"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over 100% NL Non-stop"></a>
                 </article>
             </li>
 
@@ -375,8 +361,7 @@
                     <p></p>
                     <img src="./assets/goedemorgen.png" alt="Thumbnail Lisanne Bronkhorst" width="150">
                     <p>Giorgio Hokstam</p>
-                    <!-- <a href="#">Lees meer over <em>The Warming Up</em></a> -->
-                    <a href="#" aria-label="Lees meer over Goedemorgen 100% NL"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Goedemorgen 100% NL"></a>
                 </article>
             </li>
 
@@ -388,8 +373,7 @@
                     <p></p>
                     <img src="./assets/erikroekel.png" alt="Thumbnail Erik van Roekel" width="150">
                     <p>Erik van Roekel</p>
-                    <!-- <a href="#">Lees meer over <em>Ekdom In De Morgen</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Erik van Roekel"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Erik van Roekel"></a>
                 </article>
             </li>
 
@@ -401,8 +385,7 @@
                     <p></p>
                     <img src="./assets/colinbanks.png" alt="Thumbnail Colin Banks" width="150">
                     <p>Colin Banks</p>
-                    <!-- <a href="#">Lees meer over <em>Goud Van Oud</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Colin Banks"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Colin Banks"></a>
                 </article>
             </li>
 
@@ -414,8 +397,7 @@
                     <p></p>
                     <img src="./assets/barrypaf.png" alt="Thumbnail Barry Paf" width="150">
                     <p>Barry Paf</p>
-                    <!-- <a href="#">Lees meer over <em>Sander Hoogendoorn</em></a>             -->
-                    <a href="#" aria-label="Lees meer over De Barry Paf Show"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over De Barry Paf Show"></a>
                 </article>
             </li>
 
@@ -427,8 +409,7 @@
                     <p></p>
                     <img src="./assets/koenhansen.png" alt="Thumbnail Koen Hansen" width="150">
                     <p>Koen Hansen</p>
-                    <!-- <a href="#">Lees meer over <em>De Bonanza</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Koen Hansen"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Koen Hansen"></a>
                 </article>
             </li>
             
@@ -439,12 +420,12 @@
                     <p>22:00 - 23:59</p>
                     <p></p>
                     <p>100% NL Non-stop</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over 100% NL Non-stop"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over 100% NL Non-stop"></a>
                 </article>
             </li>
         </ul>
 
+        <!-- Programmering Sublime -->
         <ul class="programmering-sublime">
             <li>
                 <article class="show-blok-veronica drie-uur sublime">
@@ -454,8 +435,7 @@
                     <p>All night long funk, soul & jazznig</p>
                     <img src="./assets/nightshift.webp" alt="Thumbnail Sublime Night Shift" width="150">
                     <p>Sublime Night Shift</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Sublime Night Shift"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Sublime Night Shift"></a>
                 </article>
             </li>
             <li>
@@ -466,8 +446,7 @@
                     <p>All night long funk, soul & jazznig</p>
                     <img src="./assets/nightshift.webp" alt="Thumbnail Sublime Night Shift" width="150">
                     <p>Sublime Night Shift</p>
-                    <!-- <a href="#">Leer meer over <em>Oh Wat Een Nacht</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Sublime Night Shift"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Sublime Night Shift"></a>
                 </article>
             </li>
 
@@ -479,8 +458,7 @@
                     <p></p>
                     <img src="./assets/ochtendshow.webp" alt="Thumbnail De Sublime Ochtendshow" width="150">
                     <p>Jaap Brienen</p>
-                    <!-- <a href="#">Lees meer over <em>The Warming Up</em></a> -->
-                    <a href="#" aria-label="Lees meer over De Sublime Ochtendshow"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over De Sublime Ochtendshow"></a>
                 </article>
             </li>
 
@@ -492,8 +470,7 @@
                     <p></p>
                     <img src="./assets/werkdag.webp" alt="Thumbnail Sublime Non-stop werkdag" width="150">
                     <p></p>
-                    <!-- <a href="#">Lees meer over <em>Ekdom In De Morgen</em></a>             -->
-                    <a href="#" aria-label="Lees meer over De Sublime Ochtendshow"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over De Sublime Non-stop Werkdag"></a>
                 </article>
             </li>
 
@@ -505,8 +482,7 @@
                     <p></p>
                     <img src="./assets/werkdag.webp" alt="Thumbnail Sublime Non-stop werkdag" width="150">
                     <p></p>
-                    <!-- <a href="#">Lees meer over <em>Ekdom In De Morgen</em></a>             -->
-                    <a href="#" aria-label="Lees meer over De Sublime Ochtendshow"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over De Sublime Non-stop Werkdag"></a>
                 </article>
             </li>
 
@@ -518,8 +494,7 @@
                     <p></p>
                     <img src="./assets/werkdag.webp" alt="Thumbnail Sublime Non-stop werkdag" width="150">
                     <p></p>
-                    <!-- <a href="#">Lees meer over <em>Ekdom In De Morgen</em></a>             -->
-                    <a href="#" aria-label="Lees meer over De Sublime Ochtendshow"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over De Sublime Non-stop Werkdag"></a>
                 </article>
             </li>
 
@@ -531,8 +506,7 @@
                     <p></p>
                     <img src="./assets/classics.webp" alt="Thumbnail Sublime Classics" width="150">
                     <p></p>
-                    <!-- <a href="#">Lees meer over <em>Goud Van Oud</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Sublime Classics"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Sublime Classics"></a>
                 </article>
             </li>
 
@@ -544,8 +518,7 @@
                     <p></p>
                     <img src="./assets/evening-bites.webp" alt="Thumbnail Evening Bites" width="150">
                     <p></p>
-                    <!-- <a href="#">Lees meer over <em>Sander Hoogendoorn</em></a>             -->
-                    <a href="#" aria-label="Lees meer over Sublime Evening Bites"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over Sublime Evening Bites"></a>
                 </article>
             </li>
 
@@ -557,18 +530,15 @@
                     <p></p>
                     <img src="./assets/smooth.webp" alt="Thumbnail Sublime Smooth" width="150">
                     <p></p>
-                    <!-- <a href="#">Lees meer over <em>De Bonanza</em></a>             -->
-                    <a class=""href="#" aria-label="Lees meer over sublime smoothsmo"></a>
+                    <a href="#"><img src="./assets/arrow-right.svg" alt="Lees meer over sublime smoothsmooth"></a>
                 </article>
             </li>
         </ul>
         
+        <!-- Logo's radiozenders -->
         <a class="veronica-logo" href="index.html"><img src="./assets/radio-veronica-bg.png" alt="Bekijk het programma van Radio Veronica" width="100"></a>
-
         <a class="slam-logo" href="#"><img src="./assets/slam-logo.png" alt="Bekijk het programma van SLAM" width="100"></a>
-
         <a class="honderdp-logo" href="#"><img src="./assets/100p-logo.png" alt="Bekijk het programma van 100%NL" width="100"></a>
-
         <a class="sublime-logo" href="#"><img src="./assets/sublime-logo.png" alt="Bekijk het programma van Sublime" width="100"></a>
 
     </main>
@@ -576,7 +546,8 @@
     <footer>
         <h2 class="sr-only">Overzicht radiozenders</h2>
 
-        <button class="zenders-button" aria-label="Bekijk de programmering van andere radiozenders"><img src="./assets/circle-up.svg" alt=""></button>
+        <!-- Knop op mobiel om onderstaand menu te openen -->
+        <button class="zenders-button"><img src="./assets/circle-up.svg" alt="Bekijk de programmering van andere radiozenders"></button>
         
         <ul  id="zenders-menu" class="zenders-menu">
             <li>
@@ -596,11 +567,12 @@
             </li>
         </ul>
 
+        <!-- Muziekplayer  -->
         <section class="player">
             <h2>Goud Van Oud</h2>
             <p>Back To Black - Amy Winehouse</p>
             <img src="./assets/back-to-black-thumbnail.png" alt="Album cover Back to Black" width="150">
-            <a href="" aria-label="Speel af/Pauzeer"></a>
+            <a href=""><img class="sr-only" src="./assets/arrow-right.svg" alt="Speel af/Pauzeer"></a>
         </section>
     </footer>
 

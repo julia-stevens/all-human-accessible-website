@@ -1,5 +1,4 @@
 // MENU PLAYER
-
 const footerButton = document.querySelector("footer button");
 
 footerButton.addEventListener("click", toggleMenu);
@@ -10,6 +9,7 @@ function toggleMenu() {
     footerMenu.classList.toggle("toonMenu");
     footerButton.classList.toggle("toonMenu");
 }
+
 
 // SCROLL FUNCTIE NAVIGATIE
 
@@ -60,8 +60,9 @@ function hasScrolled() {
     lastScrollTop = st;
 }
 
-// current time !!BRON!!: 
 
+// TIJD INDICATIE  
+// Bron: https://chatgpt.com/c/67114d40-6430-800f-aeeb-d2b590634f91
 function updateCurrentTimeIndicator() {
     const currentTimeIndicator = document.getElementById('current-time');
     const timeElements = document.querySelectorAll('aside time');
@@ -150,6 +151,9 @@ setInterval(updateCurrentTimeIndicator, 1000);
 // Recalculate position on window resize to adapt for screen size changes
 window.addEventListener('resize', updateCurrentTimeIndicator);
 
+
+// WANNEER MENU GESLOTEN, WORDEN DE LINK GESKIPT - WANNEER GEOPEND, LINKS KRIJGEN FOCUS
+// Bron: https://chatgpt.com/c/671636e6-d424-800f-80ae-1a8cbff8d63a
 document.addEventListener('DOMContentLoaded', function() {
     // Select the button that triggers the menu
     const button = document.querySelector('.zenders-button');
