@@ -343,7 +343,7 @@ aside {
 }
 
 /* THUMBNAIL */
-.show-blok-veronica img {
+.show-blok-veronica > img {
     grid-column: 2/3;
     grid-row: 2/4;
     justify-self: center;
@@ -374,7 +374,7 @@ aside {
     height: 2.5em;
     border-radius: 50%;
     background-color: var(--highlight-pink);
-    font-size: clamp(.5rem, 1.5vw, .7rem);
+    font-size: clamp(.7rem, 1.5vw, .7rem);
     display: grid; 
     place-items: center;
 }
@@ -648,6 +648,11 @@ button img {
         grid-row: 2/3;
         justify-self: center;
         align-self: center; 
+    }
+
+    .show-blok-veronica a > img {
+    translate: 0%;
+
     }
 
     /* Lijst programmering veronica */
