@@ -152,15 +152,6 @@ function toggleMenu() {
     footerButton.classList.toggle("toonMenu");
 }
 ```
-
-Ook wordt hier de positie van de tijdindicator bepaald 
-```js
-const now = new Date(), currentHour = now.getHours(), currentMinutes = now.getMinutes();  // Get current time
-const totalTimeSpan = lastTimePosition - firstTimePosition, sizePerHour = totalTimeSpan / 24;  // Calculate space per hour
-const indicatorPosition = (currentHour * sizePerHour) + firstTimePosition + (currentMinutes / 60) * sizePerHour + 3;  // Compute position
-currentTimeIndicator.style[isDesktop ? 'left' : 'top'] = `${indicatorPosition}px`;  // Update indicator position based on screen type
-```
-
 ## Bronnen
 * Scroll functionaliteit https://jsfiddle.net/mariusc23/s6mLJ/31/
 * Skip link https://www.geeksforgeeks.org/how-to-add-skip-navigation-links-for-better-web-accessibility-in-html/
