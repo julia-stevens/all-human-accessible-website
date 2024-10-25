@@ -102,9 +102,9 @@
 
 /* Bron: https://www.geeksforgeeks.org/how-to-add-skip-navigation-links-for-better-web-accessibility-in-html/ */
 .skip-link {
-    color: black; 
+    color: white; 
     padding: 1rem;
-    background-color: lime;
+    background-color: black;
     position: absolute; 
     z-index: 2; 
     top: auto; 
